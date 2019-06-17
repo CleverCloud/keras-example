@@ -1,10 +1,5 @@
 #!/usr/bin/env bash
 
-while [ true ] ; do
-echo "toto"
-sleep 10
-done
-
 git clone https://github.com/titu1994/Neural-Style-Transfer.git
 
 python get_bucket_content.py $BUCKET_SOURCE $(pwd)/source_images
@@ -26,7 +21,7 @@ for filename in $(pwd)/../source_images/*.jpg; do
 base_filename=$(basename $filename)
 prefix=${base_filename::-4}
 mkdir results/$prefix
-python Network.py $filename  $style results/$prefix/$prefix  --num_iter 30  --content_loss_type 0 --image_size 800 --model "vgg16" --rescale_image
+python Network.py $filename  $style results/$prefix/$prefix  --num_iter 30  --content_loss_type 0 --image_size 800 --model "vgg19" --rescale_image "yes"
 i=$(($i + 1))
 done
 
