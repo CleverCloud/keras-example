@@ -9,7 +9,7 @@ from dotenv import load_dotenv
 load_dotenv()
 
 API_KEY = os.getenv("CELLAR_ADDON_KEY_ID")
-HOST = os.getenv("CELLAR_ADDON_HOST"
+HOST = os.getenv("CELLAR_ADDON_HOST")
 SECRET_KEY = os.getenv("CELLAR_ADDON_KEY_SECRET")
 
 BUCKET_NAME = os.getenv("BUCKET_RESULT")
