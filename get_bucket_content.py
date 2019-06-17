@@ -9,7 +9,7 @@ SECRET_KEY = os.getenv("CELLAR_ADDON_KEY_SECRET")
 
 
 def main():
-    if len(sys.argv) != 2 or len(sys.argv) != 3:
+    if len(sys.argv) > 2 or len(sys.argv) > 3:
         raise Exception("Usage : %s bucket_name dest_folder (optional)" % sys.argv[0])
 
     bucket_manager = ClBucketManagement(api_key=API_KEY,

@@ -6,26 +6,26 @@ python get_bucket_content.py $BUCKET_SOURCE $(pwd)/source_images
 
 python get_bucket_content.py $BUCKET_STYLE $(pwd)/style_images
 
-cd Neural-Style-Transfer
-
-while [ true ] ; do
-sleep 10
+style=""
+for file in $(pwd)/sytle_images/*.jpg; do
+tmp="$style $file"
+style=$tmp
 done
+
+cd Neural-Style-Transfer
 
 
 mkdir results
 
-for file in $(pwd)/../sytle_images/*.jpg
-do
-    style=${style:+style }$file
-done
-
 i=0
-for filename in in $(pwd)/../source_images/*.jpg; do
-prefix=$(basename $filename)
-python network.py $filename  $style results/result_$i/$prefix  --content_weight 5 --style_weight 1.0 1.0 --num_iter 20 --model "vgg16" --content_loss_type 0
+for filename in $(pwd)/../source_images/*.jpg; do
+base_filename=$(basename $filename)
+prefix=${base_filename::-4}
+mkdir results/$prefix
+python Network.py $filename  $style results/$prefix/$prefix  --content_weight 5 --style_weight 1.0 1.0 --num_iter 20 --model "vgg16" --content_loss_type 0
 i=$(($i + 1))
 done
+
 
 tar -zcvf results.tar.gz results
 
