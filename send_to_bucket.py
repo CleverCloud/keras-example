@@ -26,8 +26,9 @@ def main():
 
     bucket_name = sys.argv[1]
 
-    if bucket_name not in bucket_manager.get_all_bucket():
-        bucket_manager.create_bucket(bucket_name)
+    if bucket_name  in bucket_manager.get_all_bucket():
+        bucket_manager.delete_bucket(bucket_name, allow_full_bucket_deletion=True)
+    bucket_manager.create_bucket(bucket_name)
 
     bucket_manager.save_big_files(bucket_name, os.path.basename(path), path)
 
