@@ -7,9 +7,8 @@ python get_bucket_content.py $BUCKET_SOURCE $(pwd)/source_images
 python get_bucket_content.py $BUCKET_STYLE $(pwd)/style_images
 
 style=""
-for file in $(pwd)/sytle_images/*.jpg; do
-tmp="$style $file"
-style=$tmp
+for filename in $(pwd)/style_images/*.jpg; do
+	style+=" $filename"
 done
 
 cd Neural-Style-Transfer
