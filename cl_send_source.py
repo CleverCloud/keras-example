@@ -5,7 +5,6 @@ from bucket_management import ClBucketManagement
 
 from dotenv import load_dotenv
 
-
 load_dotenv()
 
 API_KEY = os.getenv("CELLAR_ADDON_KEY_ID")
@@ -37,7 +36,7 @@ def main():
         bucket_manager.create_bucket(bucket_name)
     else:
         ret = input("Already existing source bucket erase it ?")
-        if ret.lower() == ("yes" or "y"):
+        if ret.lower() == "yes" or ret.lower() == "y":
             bucket_manager.delete_bucket(bucket_name, allow_full_bucket_deletion=True)
             bucket_manager.create_bucket(bucket_name)
 
