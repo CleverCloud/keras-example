@@ -21,7 +21,7 @@ for filename in $(pwd)/../source_images/*.jpg; do
 base_filename=$(basename $filename)
 prefix=${base_filename::-4}
 mkdir results/$prefix
-python Network.py $filename  $style results/$prefix/$prefix  --num_iter 1  --content_loss_type 0 --image_size 400 --model "vgg16" --rescale_image "yes"
+python Network.py $filename  $style results/$prefix/$prefix  --num_iter 20  --content_loss_type 0 --image_size 400 --model "vgg16" --rescale_image "yes"
 break
 i=$(($i + 1))
 done
