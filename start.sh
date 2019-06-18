@@ -1,9 +1,5 @@
 #!/usr/bin/env bash
 
-while [ true ] ; do
-sleep 10
-done
-
 git clone https://github.com/titu1994/Neural-Style-Transfer.git
 
 python get_bucket_content.py $BUCKET_SOURCE $(pwd)/source_images
