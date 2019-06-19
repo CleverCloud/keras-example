@@ -71,4 +71,8 @@ We provide some helpers python script based on *.env* file.
        clever deploy
 
     > for all restart, use **clever restart** instead of **deploy**
+    
+## Issues and Limits
+This is a quick usage demonstration of Clever Grid. It is not optimized and the usage of to many style source files and
+pictures to treat can raise an OOM (Out Of Memory) during the execution !
 
