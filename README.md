@@ -102,6 +102,11 @@ We provide some helpers python script based on *.env* file.
 
     > for all restart, use **clever restart** instead of **deploy**
 
+1. Wait until the end (see logs into the console or in your terminal). Then get the result :
+
+       python cl_get_results.py dest_folder
+ 
+
 ## Create an application on Clever Grid  
 1. login in https://dashboard.clevergrid.io
 1. choose your organisation
