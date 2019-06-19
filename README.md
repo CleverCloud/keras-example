@@ -102,7 +102,7 @@ We provide some helpers python script based on *.env* file.
 
     > for all restart, use **clever restart** instead of **deploy**
 
-##Create an application on Clever Grid  
+## Create an application on Clever Grid  
 1. login in https://dashboard.clevergrid.io
 1. choose your organisation
 1. create an application
