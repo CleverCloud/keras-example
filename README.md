@@ -17,8 +17,8 @@ Based on the Clever Cloud platform. Clever Grid provide two running modes.
 
 We lean on add-on like Cellar to keep the data.
 
-## Painting style transfer on photos : QUICK START :
-### explaination
+## Painting style transfer on photos 
+### explanation
 We only need a start.sh file *(which can also be a python file -> don't forget to change the starting env variable)*. Some operations are done :
 * We firstly get the data source from our cellar source bucket. It's pictures we want change
 * We get some painting we want uses as style source from Cellar too
@@ -40,7 +40,7 @@ We provide some helpers python script based on *.env* file.
     cl_get_style.py param
 *param* is the style folder where paints styles example are stores
 
-### TL;DR :
+## Quick Start :
 
 1. link to your python_ml runner application
 
