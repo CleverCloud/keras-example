@@ -107,7 +107,7 @@ We provide some helpers python script based on *.env* file.
 1. choose your organisation
 1. create an application
 1. select the Python Runner and name it
-1. choose your instance size the number of nodes needed
+1. choose your instance size and the number of nodes needed
 
 ## Issues and Limits
 This is a quick usage demonstration of Clever Grid. It is not optimized and the usage of to many style source files and
