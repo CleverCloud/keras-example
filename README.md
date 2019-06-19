@@ -50,7 +50,7 @@ We provide some helpers python script based on *.env* file.
 
        git remote add clever git+ssh://git@ppush-clevergrid-clevercloud-customers.services.clever-cloud.com/<YOUR_APP_ID>.git
 
-    > not the <YOUR_APP_ID> field
+    > note the <YOUR_APP_ID> field
 
 1. push the code to your application :
 
