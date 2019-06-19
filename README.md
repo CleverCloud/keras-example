@@ -8,17 +8,18 @@ Hence, we provide an easy way to provide some styles examples and our pictures. 
 ### What is it ?
 Clever-grid is an easy to use GPU provider which aim to address issues of  the most wide kind of developers, from users to the hard coders.
 
-### How it's Works
+### How it Works
 Based on the Clever Cloud platform. Clever Grid provide two running modes.
 1. A runner : to run a script just once. It can be used for Train networks
 1. Web service : To build a Web service which can be requested for any reasons
 
 > **Theses instances are state less !! That mean that data is not saved. You need to use an add-on like Cellar (the Clever Cloud S3 like object storage)**
 
-We lean on add-on like Cellar to keep the data.
+Theses instances runs the provided code.
+ 
+Set up is done by environment variables. Especially the starting script (in Bash or Python)
 
-Configuration is passed by environment variables
-
+> for further information, refer to  https://www.clever-cloud.com/doc/
 
 ## Painting style transfer on photos 
 ### explanation
@@ -27,6 +28,23 @@ We only need a start.sh file *(which can also be a python file -> don't forget t
 * We get some painting we want uses as style source from Cellar too
 * We run the amazing Somshubra Majumdar's script with wanted arguments. (It can be adjust for  better results. Ref on Somshubra Majumdar's documentation)
 * We send the result on Cellar
+
+#### Used environment variables ares :
+
+1. To manage storage :
+
+       BUCKET_RESULT
+       BUCKET_SOURCE
+       BUCKET_STYLE
+
+1. To manage Cellar add-on
+   
+       CELLAR_ADDON_HOST
+       CELLAR_ADDON_KEY_ID
+       CELLAR_ADDON_KEY_SECRET
+
+   > Create during the add-on creation
+
 
 > We use three additionally python files to get and send data in Cellar : *bucket_management.py*, *get_bucket_content.py*, *send_to_bucket.py*
 
@@ -45,7 +63,9 @@ We provide some helpers python script based on *.env* file.
 
 ## Quick Start :
 
-> You need the clever Cloud Client. See : https://www.clever-cloud.com/doc/clever-tools/getting_started/
+> You need the clever Cloud command line client. See : https://www.clever-cloud.com/doc/clever-tools/getting_started/
+
+> If you do not have a clever cloud account, you can get on for free here : https://api.clever-cloud.com/v2/sessions/signup
 
 1. Login to your Clever Grid Account
 
@@ -57,20 +77,21 @@ We provide some helpers python script based on *.env* file.
 
 > You need to have a *Python Runner* application in https://dashboard.clevergrid.io *(see the section : Create an application on Clever Grid)*
 
-> <APP_ID> can be find on the *overview* page      
+> <APP_ID> can be find on the application *overview* page      
+
 1. add your clever grid application repository to you current git project :
 
        git remote add clever git+ssh://git@ppush-clevergrid-clevercloud-customers.services.clever-cloud.com/<YOUR_APP_ID>.git
 
     > note the <YOUR_APP_ID> field
     
-1. Set environment variable needed :
+1. Set environment variables needed :
 
-   * From Clever Grid Console
+   * In the *Environment Variables* menu under our Application menu in the clever grid console
 
    OR
 
-   * Whit the clever Client :
+   * Whit the clever CLI (Command Line tools) :
        
          clever env set BUCKET_RESULT demo-painting-test-results
          clever env set BUCKET_SOURCE demo-painting-test-source
