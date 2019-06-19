@@ -17,6 +17,9 @@ Based on the Clever Cloud platform. Clever Grid provide two running modes.
 
 We lean on add-on like Cellar to keep the data.
 
+Configuration is passed by environment variables
+
+
 ## Painting style transfer on photos 
 ### explanation
 We only need a start.sh file *(which can also be a python file -> don't forget to change the starting env variable)*. Some operations are done :
@@ -42,25 +45,52 @@ We provide some helpers python script based on *.env* file.
 
 ## Quick Start :
 
+1. Login to your Clever Grid Account
+
+       clever login
+
 1. link to your python_ml runner application
 
-       clever link
-       
+       clever link <APP_ID>
+
+> You need to have a *Python Runner* application in https://dashboard.clevergrid.io ([see this section](## Create an application on Clever Grid))
+
+> <APP_ID> can be find on the *overview* page      
 1. add your clever grid application repository to you current git project :
 
        git remote add clever git+ssh://git@ppush-clevergrid-clevercloud-customers.services.clever-cloud.com/<YOUR_APP_ID>.git
 
     > note the <YOUR_APP_ID> field
+    
+1. Set environment variable needed :
+
+   * From Clever Grid Console
+
+   OR
+
+   * Whit the clever Client :
+       
+         clever env set BUCKET_RESULT demo-painting-test-results
+         clever env set BUCKET_SOURCE demo-painting-test-source
+         clever env set BUCKET_STYLE demo-painting-style-source
+         clever env set CC_MLPYTHON_START_SCRIPT start.sh
 
 1. push the code to your application :
 
-       git push
+       git push clever
+
+    > *clever* is the remote Clever Grid repository name prior named
 
 1. run :
 
        pip intall -r requirement.txt
   
-1. set up a *.env* file with the same environement varibale than in the Clever Grid application
+1. set up a *.env* file with the same environment variables than in the Clever Grid application
+
+       echo "BUCKET_RESULT=demo-painting-test-results" > .env
+       echo "BUCKET_SOURCE=demo-painting-test-source" >>.env
+       echo "BUCKET_STYLE=demo-painting-style-source" >> .env
+
 1. run :
 
        python cl_send_source.py picture_source_folder
@@ -71,7 +101,14 @@ We provide some helpers python script based on *.env* file.
        clever deploy
 
     > for all restart, use **clever restart** instead of **deploy**
-    
+
+## Create an application on Clever Grid  
+1. login in https://dashboard.clevergrid.io
+1. choose your organisation
+1. create an application
+1. select the Python Runner and name it
+1. choose your instance size the number of nodes needed
+
 ## Issues and Limits
 This is a quick usage demonstration of Clever Grid. It is not optimized and the usage of to many style source files and
 pictures to treat can raise an OOM (Out Of Memory) during the execution !
