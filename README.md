@@ -53,7 +53,7 @@ We provide some helpers python script based on *.env* file.
 
        clever link <APP_ID>
 
-> You need to have a *Python Runner* application in https://dashboard.clevergrid.io ([see this section](##Create-an-application-on-Clever-Grid))
+> You need to have a *Python Runner* application in https://dashboard.clevergrid.io *(see the section : Create an application on Clever Grid)*
 
 > <APP_ID> can be find on the *overview* page      
 1. add your clever grid application repository to you current git project :
