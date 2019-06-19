@@ -45,6 +45,8 @@ We provide some helpers python script based on *.env* file.
 
 ## Quick Start :
 
+> You need the clever Cloud Client. See : https://www.clever-cloud.com/doc/clever-tools/getting_started/
+
 1. Login to your Clever Grid Account
 
        clever login
