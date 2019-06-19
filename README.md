@@ -53,7 +53,7 @@ We provide some helpers python script based on *.env* file.
 
        clever link <APP_ID>
 
-> You need to have a *Python Runner* application in https://dashboard.clevergrid.io ([see this section](##-Create-an-application-on-Clever-Grid))
+> You need to have a *Python Runner* application in https://dashboard.clevergrid.io ([see this section](##Create-an-application-on-Clever-Grid))
 
 > <APP_ID> can be find on the *overview* page      
 1. add your clever grid application repository to you current git project :
@@ -102,7 +102,7 @@ We provide some helpers python script based on *.env* file.
 
     > for all restart, use **clever restart** instead of **deploy**
 
-## Create an application on Clever Grid  
+##Create an application on Clever Grid  
 1. login in https://dashboard.clevergrid.io
 1. choose your organisation
 1. create an application
