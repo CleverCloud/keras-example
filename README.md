@@ -13,9 +13,9 @@ Based on the Clever Cloud platform. Clever Grid provide two running modes.
 1. A runner : to run a script just once. It can be used for Train networks
 1. Web service : To build a Web service which can be requested for any reasons
 
-> **Theses instances are state less !! That mean that data is not saved. You need to use an add-on like Cellar (the Clever Cloud S3 like object storage)**
+> **These instances are stateless !! That mean that data is not saved. You need to use an add-on like Cellar (the Clever Cloud S3 like object storage)**
 
-Theses instances runs the provided code.
+These instances runs the provided code.
  
 Set up is done by environment variables. Especially the starting script (in Bash or Python)
 
@@ -43,7 +43,7 @@ We only need a start.sh file *(which can also be a python file -> don't forget t
        CELLAR_ADDON_KEY_ID
        CELLAR_ADDON_KEY_SECRET
 
-   > Create during the add-on creation
+   > These are automatically set during the linkage between the Application and the add-on
 
 
 > We use three additionally python files to get and send data in Cellar : *bucket_management.py*, *get_bucket_content.py*, *send_to_bucket.py*
