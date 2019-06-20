@@ -52,13 +52,13 @@ We only need a start.sh file *(which can also be a python file -> don't forget t
 We provide some helpers python script based on *.env* file.
 > environment Variables must be the same than in Clever Grid application
 #### Helper usage :
-    cl_get_results.py param
+    python cl_get_results.py param
 *param* is a destination folder where get results from buckets
 
-    cl_send_source.py param
+    python cl_send_source.py param
 *param* is the source folder where pictures to process are stores
 
-    cl_get_style.py param
+    python cl_get_style.py param
 *param* is the style folder where paints styles example are stores
 
 ## Quick Start :
