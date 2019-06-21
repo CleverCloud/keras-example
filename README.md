@@ -67,6 +67,8 @@ We provide some helpers python script based on *.env* file.
 
 > If you do not have a clever cloud account, you can get on for free here : https://api.clever-cloud.com/v2/sessions/signup
 
+> Steps 5 to 8 are to help you to send your data into a Cellar storage object.
+
 1. Login to your Clever Grid Account
 
        clever login
@@ -75,11 +77,11 @@ We provide some helpers python script based on *.env* file.
 
        clever link <APP_ID>
 
-> You need to have a *Python Runner* application in https://dashboard.clevergrid.io *(see the section : Create an application on Clever Grid)*
+   > You need to have a *Python Runner* application in https://dashboard.clevergrid.io *(see the section : Create an application on Clever Grid)*
 
-> <APP_ID> can be find on the application *overview* page      
+   > <APP_ID> can be find on the application *overview* page      
 
-1. add your clever grid application repository to you current git project :
+1. add your clever grid application repository to your current git project :
 
        git remote add clever git+ssh://git@ppush-clevergrid-clevercloud-customers.services.clever-cloud.com/<YOUR_APP_ID>.git
 
@@ -93,28 +95,30 @@ We provide some helpers python script based on *.env* file.
 
    * Whit the clever CLI (Command Line tools) :
        
-         clever env set BUCKET_RESULT demo-painting-test-results
-         clever env set BUCKET_SOURCE demo-painting-test-source
-         clever env set BUCKET_STYLE demo-painting-style-source
+         clever env set BUCKET_RESULT <BUCKET_RESULT_NAME>
+         clever env set BUCKET_SOURCE <BUCKET_SOURCE_NAME>
+         clever env set BUCKET_STYLE <BUCKET_STYLE_NAME>
          clever env set CC_MLPYTHON_START_SCRIPT start.sh
 
-1. push the code to your application :
+1. (optional) push the code to your application :
 
        git push clever
 
     > *clever* is the remote Clever Grid repository name prior named
 
-1. run :
+1. (optional) install required packages :
+    > Needed for helpers scripts
 
        pip intall -r requirement.txt
-  
-1. set up a *.env* file with the same environment variables than in the Clever Grid application
+       
+1. (optional) set up a *.env* file with the same environment variables than in the Clever Grid application
+    > this step allow you to use helpers python script to send your data to Cellar
 
-       echo "BUCKET_RESULT=demo-painting-test-results" > .env
-       echo "BUCKET_SOURCE=demo-painting-test-source" >>.env
-       echo "BUCKET_STYLE=demo-painting-style-source" >> .env
+       echo "BUCKET_RESULT=<BUCKET_RESULT_NAME>" > .env
+       echo "BUCKET_SOURCE=<BUCKET_SOURCE_NAME>" >>.env
+       echo "BUCKET_STYLE=<BUCKET_STYLE_NAME>" >> .env
 
-1. run :
+1. (optional) use helpers scripts to send your data to Cellar :
 
        python cl_send_source.py picture_source_folder
        python cl_send_style.py.py style_source_folder
