@@ -6,7 +6,7 @@ Hence, we provide an easy way to provide some styles examples and our pictures. 
 
 ## Clever Grid platform
 ### What is it ?
-Clever-grid is an easy to use GPU provider which aim to address issues of  the most wide kind of developers, from users to the hard coders.
+Clever-grid is an easy to use GPU provider which aim to address issues of  the most wide kind of developers, from users to the hardcoders.
 
 ### How it Works
 Based on the Clever Cloud platform. Clever Grid provide two running modes.
