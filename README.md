@@ -76,6 +76,8 @@ We provide some helpers python script based on *.env* file.
 1. Link to your python_ml runner application
 
        clever link <APP_ID>
+       
+   **You need a strong enough instance of your application for this task. Use at least a size L**
 
    > You need to have a *Python Runner* application in https://dashboard.clevergrid.io *(see the section : Create an application on Clever Grid)*
 
@@ -109,7 +111,7 @@ We provide some helpers python script based on *.env* file.
 1. (optional) install required packages:
     > Needed for helpers scripts
 
-       pip intall -r requirement.txt
+       pip install boto filechunkio python-dotenv
        
 1. (optional) set up a *.env* file with the same environment variables than in the Clever Grid application
     > this step allow you to use helpers python script to send your data to Cellar
