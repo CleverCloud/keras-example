@@ -118,7 +118,8 @@ We provide some helpers python script based on *.env* file.
        echo "BUCKET_SOURCE=<BUCKET_SOURCE_NAME>" >>.env
        echo "BUCKET_STYLE=<BUCKET_STYLE_NAME>" >> .env
 
-1. (optional) use helpers scripts to send your data to Cellar:
+1. (optional) use helpers scripts to send your data to Cellar and uncomment the dedicated part in `start.sh`:
+     > This part allow you to send your own data instead of the examples ones
 
        python cl_send_source.py picture_source_folder
        python cl_send_style.py.py style_source_folder

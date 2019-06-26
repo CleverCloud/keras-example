@@ -3,9 +3,11 @@
 # Somshubra Majumdar git source
 git clone https://github.com/titu1994/Neural-Style-Transfer.git
 
-# Get data source. Picture to process and styles to copy
-python get_bucket_content.py $BUCKET_SOURCE $(pwd)/source_images
-python get_bucket_content.py $BUCKET_STYLE $(pwd)/style_images
+# UNCOMMENT Here to use your own data
+#rm -rf source_images style_images
+#python get_bucket_content.py $BUCKET_SOURCE $(pwd)/source_images
+#python get_bucket_content.py $BUCKET_STYLE $(pwd)/style_images
+
 
 # format arguments to run Somshubra Majumdar's script
 style=""
