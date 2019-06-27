@@ -102,12 +102,6 @@ We provide some helpers python script based on *.env* file.
          clever env set BUCKET_STYLE <BUCKET_STYLE_NAME>
          clever env set CC_MLPYTHON_START_SCRIPT start.sh
 
-1. (optional) push the code to your application:
-
-       git push clever
-
-    > *clever* is the remote Clever Grid git repository name
-
 1. (optional) install required packages:
     > Needed for helpers scripts
 
@@ -125,6 +119,15 @@ We provide some helpers python script based on *.env* file.
 
        python cl_send_source.py picture_source_folder
        python cl_send_style.py.py style_source_folder
+       
+1. (optional) push the code to your application:
+
+       git add start.sh
+       git commit -m "update start tu use personal data"
+       git push clever
+
+    > *clever* is the remote Clever Grid git repository name
+
   
 1. Finally start your application with
 
