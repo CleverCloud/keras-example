@@ -123,7 +123,7 @@ We provide some helpers python script based on *.env* file.
 1. (optional) commit changes in the `start.sh` files :
 
        git add start.sh
-       git commit -m "update start tu use personal data"
+       git commit -m "update start.sh to use personal data"
 
 1. push the code to your application:
        git push clever
