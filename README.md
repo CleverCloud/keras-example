@@ -126,6 +126,7 @@ We provide some helpers python script based on *.env* file.
        git commit -m "update start.sh to use personal data"
 
 1. push the code to your application:
+
        git push clever
 
     > *clever* is the remote Clever Grid git repository name
