@@ -120,7 +120,7 @@ We provide some helpers python script based on *.env* file.
        python cl_send_source.py picture_source_folder
        python cl_send_style.py.py style_source_folder
        
-1. (optional) commit changes in the `start.sh` files :
+1. (optional) commit changes in the `start.sh` file :
 
        git add start.sh
        git commit -m "update start.sh to use personal data"
