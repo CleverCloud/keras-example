@@ -91,6 +91,8 @@ We provide some helpers python script based on *.env* file.
     
 1. Set the needed environment variables:
 
+> This example run with python 3.6 
+
    * In the *Environment Variables* menu under our Application menu in the clever grid console
 
    OR
@@ -100,7 +102,8 @@ We provide some helpers python script based on *.env* file.
          clever env set BUCKET_RESULT <BUCKET_RESULT_NAME>
          clever env set BUCKET_SOURCE <BUCKET_SOURCE_NAME>
          clever env set BUCKET_STYLE <BUCKET_STYLE_NAME>
-         clever env set CC_MLPYTHON_START_SCRIPT start.sh
+         clever env set CC_MLPYTHON_START_SCRIPT "start.sh"
+         clever env set CC_PYTHON_VERSION "3.6"
 
 1. (optional) install required packages:
     > Needed for helpers scripts
